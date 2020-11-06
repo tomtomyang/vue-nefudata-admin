@@ -1,5 +1,7 @@
 # 数据东林vue框架说明
-### tomtomyoung
+> auth：tomtomyoung
+>
+> blog：[https://tomtomyoung.gitee.io/](https://tomtomyoung.gitee.io/)
 
 ## 文件结构说明
 
