@@ -1,0 +1,18 @@
+module.exports = {
+  'presets': [
+    '@vue/cli-plugin-babel/preset'
+  ],
+  'plugins': [
+    [
+      'component',
+      {
+        'libraryName': 'element-ui',
+        'styleLibraryName': 'theme-chalk'
+      }
+    ],
+    // 去除console.log插件
+    // 'transform-remove-console',
+    // 路由懒加载插件
+    '@babel/plugin-syntax-dynamic-import'
+  ]
+}
