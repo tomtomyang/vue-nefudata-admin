@@ -7,3 +7,11 @@ export function getTest( params ) {
         params
     )
 }
+
+// 获取请求菜单
+export function getMenuList() {
+    return request(
+        'get',
+        'menus'
+    )
+}

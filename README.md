@@ -1,7 +1,10 @@
 # 数据东林vue框架说明
+
 > auth：tomtomyoung
 >
 > blog：[https://tomtomyoung.gitee.io/](https://tomtomyoung.gitee.io/)
+>
+> 远程仓库地址：https://gitee.com/tomtomyoung/nefudata.git
 
 ## 文件结构说明
 
@@ -47,6 +50,11 @@ src
  |     |     |--goods       商品文件夹，关于商品的组件全部放入此文件夹
  |     |     |--index.vue   并存组件的父组件
  |     |
+ |     |--error
+ |     |     |
+ |     |     |--404.vue     404错误页
+ |     |     |--401.vue     401错误页
+ |     |
  |     |--single            组件不存在并存情况，放入单个文件夹
  |     |     |
  |     |     |--welcome.vue 欢迎页组件
@@ -58,7 +66,8 @@ src
  |
  |--main-dev.js             开发环境下配置   
  |--main-prod.js            生产环境下配置
- |
+ 
+ 
  |--README.md               框架文件说明
  |--RELEASE.md              版本更新说明
  |
@@ -75,18 +84,27 @@ src
 ## 版本更新说明
 
 ### 0.0 版本更新
-1. echarts;
-2. less;
-3. normalize.css;
-4. elementUI;
-5. quillEditor;
-6. table-with-tree-grid;
-7. axios;
-8. vuex;
-9. lodash;
-10. path-to-regexp;
-11. transform-remove-console;
-12. 可拖拽dialog;
+
+初始化框架：
+
+
+```
+1. echarts;                        图表插件
+2. less;                           css预处理语言
+3. normalize.css;                  css reset
+4. elementUI;                      UI组件库
+5. quillEditor;                    富文本编辑器
+6. table-with-tree-grid;           表格内树形图
+7. axios;                          http库     
+8. vuex;                           组件共享区
+9. lodash;                         JS工具库                           
+10. path-to-regexp;                url处理工具
+11. transform-remove-console;      发布环境下去除console
+12. 可拖拽dialog;                   elementUI dialog拖拽插件
+13. nprogress                      加载动画
+
+```
+
 
 ### 0.1 版本更新
 1. 添加公共面包屑导航。
@@ -115,7 +133,10 @@ src
 3. 将`RELEASE.md`文件合并至`README.md`文件中。
 
 ### 0.6 版本更新
-1. 
+1. 融合`form-generator`，给模板添加拖拽自定义布局并生成代码功能。
+2. 添加401、404错误页。
+3. 添加`连接数据库，选择数据源`功能。
+4. 添加`连接数据库，临时查询`功能。
 
 
 

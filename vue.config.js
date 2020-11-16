@@ -4,11 +4,18 @@ function resolve (dir) {
 }
 
 module.exports = {
-  pluginOptions: { // 第三方插件配置
+  // 第三方插件配置
+  pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [path.resolve(__dirname, 'src/assets/styles/global.less')] // less所在文件路径
     }
+  },
+  // host port配置
+  devServer: {
+    host: 'localhost',
+    port: 9999,
+    open: true
   },
   chainWebpack: config => {
     // 发布模式
@@ -28,12 +35,6 @@ module.exports = {
         echarts: 'echarts',
         'vue-quill-editor': 'VueQuillEditor' 
       })
-
-      // 给htmlplugin添加一个isProd参数
-      config.plugin('html').tap(args => {
-        args[0].isProd = true
-        return args
-      })
     })
 
     // 开发模式
@@ -42,11 +43,6 @@ module.exports = {
         .entry('app')
         .clear()
         .add('./src/main-dev.js')
-
-      config.plugin('html').tap(args => {
-        args[0].isProd = false
-        return args
-      })
     })
   }
 }

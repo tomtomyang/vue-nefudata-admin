@@ -3,7 +3,7 @@ import { Button, Form, FormItem, Input, Message, Container, Header,
   Aside, Main, Menu, Submenu, MenuItemGroup, MenuItem, Breadcrumb,
   BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
   Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane,
-  Step, Steps, Checkbox, CheckboxGroup, Upload,Timeline, TimelineItem, Loading } from 'element-ui'
+  Step, Steps, Checkbox, CheckboxGroup, Upload,Timeline, TimelineItem, Loading, Transfer } from 'element-ui'
 import 'element-ui/lib/theme-chalk/base.css'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
@@ -50,3 +50,4 @@ Vue.use(Timeline)
 Vue.use(TimelineItem)
 Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.use(Loading)
+Vue.use(Transfer)

@@ -4,29 +4,39 @@ Vue.use(VueRouter)
 
 // 路由懒加载
 // views下文件
-const Login = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../views/Login.vue')
-const Home = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../views/Home.vue')
+const Login = () => import('../views/Login.vue')
+const Home = () => import('../views/Home.vue')
 
 // views/single下文件
-const Welcome = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../views/single/Welcome.vue')
-const Center = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../views/single/Center.vue')
+const Welcome = () => import('../views/single/Welcome.vue')
+const Center = () => import('../views/single/Center.vue')
 
 // views/coexist下文件
-const Conexist = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../views/coexist/index.vue')
+const Conexist = () => import('../views/coexist/index.vue')
 // 用户管理部分
-const UsersList = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../views/coexist/user/List.vue')
+const UsersList = () => import('../views/coexist/user/List.vue')
 // 权限管理部分
-const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../views/coexist/power/Rights.vue')
-const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../views/coexist/power/Roles.vue')
+const Rights = () => import('../views/coexist/power/Rights.vue')
+const Roles = () => import('../views/coexist/power/Roles.vue')
 // 商品管理部分
-const Cate = () => import(/* webpackChunkName: "Cate_Params" */ '../views/coexist/goods/Cate.vue')
-const Params = () => import(/* webpackChunkName: "Cate_Params" */ '../views/coexist/goods/Params.vue')
-const GoodsList = () => import(/* webpackChunkName: "GoodsList_Add" */ '../views/coexist/goods/List.vue')
-const Add = () => import(/* webpackChunkName: "GoodsList_Add" */ '../views/coexist/goods/Add.vue')
+const Cate = () => import('../views/coexist/goods/Cate.vue')
+const Params = () => import('../views/coexist/goods/Params.vue')
+const GoodsList = () => import('../views/coexist/goods/List.vue')
+const Add = () => import('../views/coexist/goods/Add.vue')
 // 订单管理部分
-const Order = () => import(/* webpackChunkName: "Order_Report" */ '../views/coexist/order/Order.vue')
+const Order = () => import('../views/coexist/order/Order.vue')
 // 数据统计部分
-const Report = () => import(/* webpackChunkName: "Order_Report" */ '../views/coexist/report/Report.vue')
+const Report = () => import('../views/coexist/report/Report.vue')
+// 数据库管理部分
+const DataSourse = () => import('../views/coexist/database/DataSourse.vue')
+const TempQuery = () => import('../views/coexist/database/TempQuery.vue')
+const LinkOracle = () => import('../components/datasourse/Oracle.vue')
+const OracleView = () => import('../components/datasourse/View.vue')
+const DsIndex = () => import('../components/datasourse/index.vue')
+const TqIndex = () => import('../components/tempquery/index.vue')
+const LinkMysql = () => import('../components/tempquery/Mysql.vue')
+const VisualQuery = () => import('../components/tempquery/VisualQuery.vue')
+const SqlQuery = () => import('../components/tempquery/SqlQuery.vue')
 
 const routes = [
   { 
@@ -130,6 +140,65 @@ const routes = [
             path: '/reports/report1', 
             component: Report,
             meta: { title: '数据统计1' },
+          },
+        ]
+      },
+      { 
+        path: '/database', 
+        component: Conexist,
+        redirect: '/database/dataSourse',
+        meta: { title: '数据库管理' },
+        children: [
+          {
+            path: '/database/dataSourse', 
+            component: DataSourse,
+            redirect: '/database/dataSourse/index',
+            meta: { title: '数据源' },
+            children: [
+              {
+                path: '/database/dataSourse/index', 
+                component: DsIndex,
+                meta: { title: '首页' },
+              },
+              {
+                path: '/database/dataSourse/linkOracle', 
+                component: LinkOracle,
+                meta: { title: '连接orcale' },
+              },
+              {
+                path: '/database/dataSourse/oracleView', 
+                component: OracleView,
+                meta: { title: 'oracle视图' },
+              }
+            ]
+          },
+          {
+            path: '/database/tempQuery', 
+            component: TempQuery,
+            redirect: '/database/tempQuery/index',
+            meta: { title: '临时查询' },
+            children: [
+              {
+                path: '/database/tempQuery/index', 
+                component: TqIndex,
+                meta: { title: '首页' },
+              },
+              {
+                path: '/database/tempQuery/linkMysql', 
+                component: LinkMysql,
+                meta: { title: '连接mysql' },
+              },
+              {
+                path: '/database/tempQuery/visualQuery', 
+                component: VisualQuery,
+                meta: { title: '可视化查询' },
+              },
+              {
+                path: '/database/tempQuery/sqlQuery', 
+                component: SqlQuery,
+                meta: { title: 'sql查询' },
+              }
+            ]
           }
         ]
       },
