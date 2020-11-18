@@ -15,17 +15,21 @@
             @blur="onEditorBlur($event)" @focus="onEditorFocus($event)"
             @change="onEditorChange($event)">
         </quill-editor>
+        
     </div>
 </template>
 
 <script>
+
 export default {
     data() {
       return {
         dialogVisible: false,
+        // 富文本编辑器
         content: '',
-        editorOption: {}
-      };
+        editorOption: {},
+
+      }
     },
     methods: {
         handleClose(done) {
@@ -35,11 +39,17 @@ export default {
             })
             .catch(_ => {});
         },
-        onEditorReady(editor) { // 准备编辑器
-        },
-        onEditorBlur(){}, // 失去焦点事件
-        onEditorFocus(){}, // 获得焦点事件
-        onEditorChange(){}, // 内容改变事件
+        // 富文本编辑器
+
+        // 准备编辑器
+        onEditorReady(editor) {},
+         // 失去焦点事件
+        onEditorBlur(){},
+        // 获得焦点事件
+        onEditorFocus(){}, 
+        // 内容改变事件
+        onEditorChange(){}, 
+
     },
     computed: {
         editor() {
@@ -51,5 +61,10 @@ export default {
 </script>
 
 <style lang='less' scoped>
-
+.CodeMirror-hints {
+  z-index: 9999 !important;
+}
+.codeEditor-menu {
+    margin-bottom: 10px;
+}
 </style>

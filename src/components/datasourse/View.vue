@@ -8,13 +8,13 @@
       </div>
     </el-col>
     <el-col :span="20">
-      <el-table :data="viewInfo" style="width: 100%" class="viewInfo-table">
+      <el-table :data="viewInfo" style="width: 100%" class="viewInfo-table" border height="600">
         <el-table-column prop="CHAR_LENGTH" label="CHAR_LENGTH" ></el-table-column>
         <el-table-column prop="COLUMN_ID" label="COLUMN_ID" ></el-table-column>
         <el-table-column prop="COLUMN_NAME" label="COLUMN_NAME"></el-table-column>
         <el-table-column prop="DATA_TYPE" label="DATA_TYPE"></el-table-column>
         <el-table-column prop="NULLABLE" label="NULLABLE"></el-table-column>
-    </el-table>
+      </el-table>
     </el-col>
   </el-row>
 </template>
