@@ -2,19 +2,19 @@
 <div>
     <el-row>
         <el-col :span="3">
-            <el-menu class="ds-menu" router>
-                <el-menu-item index="linkOracle">
-                    <i class="el-icon-location"></i>
+            <el-menu class="dc-menu" router>
+                <el-menu-item index="oracleConn">
+                    <i class="iconfont icon-oracle"></i>
                     <span slot="title">连接oracle</span>
                 </el-menu-item>
-                <el-menu-item index="oracleView">
-                    <i class="el-icon-location"></i>
-                    <span slot="title">查看视图</span>
+                <el-menu-item index="mysqlConn">
+                    <i class="iconfont icon-mysql"></i>
+                    <span slot="title">连接mysql</span>
                 </el-menu-item>
             </el-menu>
         </el-col>
         <el-col :span="21">
-            <el-card class="ds-main">
+            <el-card class="dc-main">
                 <transition name="fade-transform" mode="out-in">
                     <router-view></router-view>
                 </transition>
@@ -38,11 +38,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.ds-menu {
-    min-height: 620px;
+.dc-menu {
+    min-height: 670px;
 }
-.ds-main {
+.dc-main {
     margin-left: 10px;
-    min-height: 620px;
+    min-height: 670px;
 }
 </style>

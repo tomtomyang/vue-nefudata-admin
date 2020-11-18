@@ -3,10 +3,10 @@ import axios from 'axios'
 // nprogress加载动画
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 // 配置请求根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
-// axios.defaults.baseURL = 'http://192.168.1.103/h5/'
+// axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://192.168.1.104:3000/'
 // axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
 
 // 在request 拦截器中，展示进度条，添加请求头信息

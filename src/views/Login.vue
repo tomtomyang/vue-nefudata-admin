@@ -36,7 +36,7 @@
 
 <script>
 import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
-import { getTest } from '../api/test.js'
+import { getTest } from '../api/test_api.js'
 export default {
   data () {
     return {

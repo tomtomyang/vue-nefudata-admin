@@ -1,9 +1,11 @@
 <template>
   <el-row>
     <el-col :span="4">
-      <el-card class="view-tree">
-          <el-tree :data="data2"></el-tree>
-      </el-card>
+      <div class="db-menu">
+          <div class="menu-block" v-for="(item, index) in mysqlDbList" :key="index">
+            <el-button type="info" size="small" @click="showView( item )">{{item}}</el-button>
+          </div>
+      </div>
     </el-col>
     <el-col :span="20">
         <el-card style="margin-bottom:10px">
@@ -50,26 +52,13 @@
 </template>
 
 <script>
+import { mysqlTable } from '../../api/dbmanage_api'
+
 export default {
   data () {
     return {
         checkList: [],
-        data2: [{
-          label: '数据库 1',
-          children: []
-        }, {
-          label: '数据库 2',
-          children: []
-        }, {
-          label: '数据库 3',
-          children: []
-        }, {
-          label: '数据库 4',
-          children: []
-        }, {
-          label: '数据库 5',
-          children: []
-        }],
+        mysqlDbList: [],
         tableData: [{
             date: '2016-05-02',
             name: '王小虎',
@@ -112,13 +101,36 @@ export default {
             address: '上海市普陀区金沙江路 1516 弄'
           }]
     }
-  }
+  },
+  created () {
+    // 发送获取所有表列表请求
+    mysqlTable({'prefix':'test'}).then(res => {
+      console.log(res.data.Data)
+      // 如果状态码为1 说明查询成功 提示并展示信息
+      if (res.data.Meta.Status == 1) {
+        this.$message.success(res.data.Meta.Msg)
+        this.mysqlDbList = res.data.Data
+      }
+      // 如果状态码为0 说明未登录数据库 提示并跳转登录数据库页面
+      else if (res.data.Meta.Status == 0) {
+        this.$message.error(res.data.Meta.Msg)
+        this.$router.push('/dbManage/dbConnect/mysqlConn')
+      }
+      // 如果状态码为其他 提示错误信息
+      else {
+        this.$message.error(res.data.Meta.Msg)
+      }
+    }).catch(error => {
+      console.log(error)
+      this.$message.error('网络错误')
+    })
+  },
 }
 </script>
 <style lang="less" scoped>
-.view-tree {
-    height: 580px;
-    margin-right: 20px;
+.db-menu {
+    height: 620px;
+    margin-right: 10px;
 }
 .transfer-footer {
     margin-left: 5px;

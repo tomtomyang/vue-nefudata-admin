@@ -13,7 +13,7 @@ import './plugins/quillEditor.js'
 import './assets/styles/transition.less'
 // 导入全局js
 import './utils/directives.js'
-import './utils/filter.js'
+import './utils/filters.js'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
 // 导入表格树

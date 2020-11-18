@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import cityData from '../../../utils/citydata.js'
+import cityData from '../../utils/citydata.js'
 
 export default {
   data () {

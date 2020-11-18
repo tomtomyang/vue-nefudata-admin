@@ -2,12 +2,15 @@ import Vue from 'vue'
 // 导入vuex
 import Vuex from 'vuex'
 Vue.use(Vuex)
-import test from './modules/test'
+import test_x from './modules/test_x'
+import dbmanage_x from './modules/dbmanage_x'
+
 // 创建store对象
 const store = new Vuex.Store({
   // 唯一的公共数据源
   state: {
-    count: 0
+    count: 0,
+    menuActivePath: ''
   },
   // 计算部件
   // getter可以对state中的数据进行加工计算处理，形成新的数据
@@ -38,7 +41,8 @@ const store = new Vuex.Store({
     }
   },
   modules: {
-    test
+    test_x,
+    dbmanage_x
   }
 })
 // 导出store

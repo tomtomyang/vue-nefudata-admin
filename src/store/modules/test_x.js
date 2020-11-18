@@ -1,7 +1,8 @@
-import { getTest } from '../../api/test.js'
+import { getTest } from '../../api/test_api.js'
 
 const state = {
-    loginState:{}
+    loginState:{},
+    test:'haha'
 }
 
 const mutations = {

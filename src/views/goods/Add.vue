@@ -53,9 +53,7 @@
           <el-tab-pane label="商品参数" name="1">
             <!-- 渲染表单的Item项 -->
             <el-form-item
-              v-for="item in manyTableData
-
-            "
+              v-for="item in manyTableData"
               :key="item.attr_id"
               :label="item.attr_name"
             >
