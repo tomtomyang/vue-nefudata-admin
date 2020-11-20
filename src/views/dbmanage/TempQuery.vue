@@ -21,7 +21,7 @@
                         <span slot="title">mysql sql</span>
                     </el-menu-item>
                 </el-submenu>
-                <el-menu-item index="2">
+                <el-menu-item index="queryHistory">
                     <i class="iconfont icon-chakan"></i>
                     <span slot="title">历史记录</span>
                 </el-menu-item>

@@ -9,7 +9,7 @@
       <codemirror ref="editQuerySQL" v-model="mysqlSqlQuery" :options="codemirrorOptions" class="codeEditor-main"></codemirror>
     </div>
     <div>
-      <el-table :data="queryResult" style="width: 100%" class="queryResult-table" border height="460">
+      <el-table :data="queryResult" style="width: 100%" class="queryResult-table" border stripe height="460">
         <el-table-column v-for="(item, index) in queryHeader" :prop="item" :label="item" :key="index" ></el-table-column>
       </el-table>
     </div>
@@ -131,8 +131,5 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
   margin-bottom: 20px;
-}
-.queryResult-table {
-  margin-top: 0;
 }
 </style>

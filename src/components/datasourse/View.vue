@@ -8,7 +8,7 @@
       </div>
     </el-col>
     <el-col :span="20">
-      <el-table :data="viewInfo" style="width: 100%" class="viewInfo-table" border height="600">
+      <el-table :data="viewInfo" style="width: 100%" class="viewInfo-table" border stripe  height="600">
         <el-table-column prop="CHAR_LENGTH" label="CHAR_LENGTH" ></el-table-column>
         <el-table-column prop="COLUMN_ID" label="COLUMN_ID" ></el-table-column>
         <el-table-column prop="COLUMN_NAME" label="COLUMN_NAME"></el-table-column>
@@ -36,7 +36,7 @@ export default {
   created () {
     // 发送获取所有视图列表请求
     oracleView().then(res => {
-      console.log(res.data.Data)
+      // console.log(res.data.Data)
       // 如果状态码为1 说明查询成功 提示并展示信息
       if (res.data.Meta.Status == 1) {
         this.$message.success(res.data.Meta.Msg)
@@ -89,8 +89,4 @@ export default {
   height: 620px;
   margin-right: 20px;
 }
-.viewInfo-table {
-  margin-top: 0;
-}
-
 </style>

@@ -51,3 +51,4 @@ Vue.use(TimelineItem)
 Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.use(Loading)
 Vue.use(Transfer)
+

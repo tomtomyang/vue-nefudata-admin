@@ -41,6 +41,7 @@ const OracleView = () => import('../components/datasourse/View.vue')
 const DsIndex = () => import('../components/datasourse/index.vue')
 const TqIndex = () => import('../components/tempquery/index.vue')
 const VisualQuery = () => import('../components/tempquery/VisualQuery.vue')
+const QueryHistory = () => import('../components/tempquery/QueryHistory.vue')
 const MysqlSqlQuery = () => import('../components/tempquery/MysqlSqlQuery.vue')
 const OracleSqlQuery = () => import('../components/tempquery/OracleSqlQuery.vue')
 
@@ -242,6 +243,11 @@ const routes = [
             path: '/dbManage/tempQuery/oracleSqlQuery',
             component: OracleSqlQuery,
             meta: { title: 'Oracle sql查询' },
+          },
+          {
+            path: '/dbManage/tempQuery/queryHistory',
+            component: QueryHistory,
+            meta: { title: '历史记录' },
           }
         ]
       }
